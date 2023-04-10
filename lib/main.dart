@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const MyApp()); // intial point
 }
 
 class MyApp extends StatelessWidget {
+  //FlutterApp
   const MyApp({super.key});
 
   // This widget is the root of your application.
@@ -16,7 +17,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
-      home: const MyHomePage(title: 'Flutter Tutorial'),
+      home: const MyHomePage(
+          title:
+              'Flutter Tutorial'), // first screen or the starting point for the app
     );
   }
 }
@@ -51,24 +54,108 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar: AppBar(
           title: Text(widget.title),
         ),
-        body: ListView.separated(
-            itemBuilder: (context, index) {
-              return Text(
-                namesArr[index],
-                style: TextStyle(
-                    color: Colors.black26,
-                    fontSize: 35,
-                    fontStyle: FontStyle.italic,
-                    fontWeight: FontWeight.w900),
-              );
-            },
-            separatorBuilder: (context, index) {
-              return Divider(
-                height: 50,
-                thickness: 5,
-              );
-            },
-            itemCount: namesArr.length)
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          // mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              width: 20,
+              height: 20,
+              color: Colors.indigoAccent,
+            ),
+            Expanded(
+              flex: 2,
+              child: Container(
+                width: 20,
+                height: 20,
+                color: Colors.purple,
+              ),
+            ),
+            Container(
+              width: 20,
+              height: 20,
+              color: Colors.black,
+            ),
+            Container(
+              width: 20,
+              height: 20,
+              color: Colors.blueGrey,
+            ),
+            Container(
+              width: 20,
+              height: 20,
+              color: Colors.amber,
+            ),
+            Container(
+              width: 20,
+              height: 20,
+              color: Colors.grey,
+            ),
+            Expanded(
+              flex: 3,
+              child: Container(
+                width: 20,
+                height: 20,
+                color: Colors.pink,
+              ),
+            ),
+            Container(
+              width: 20,
+              height: 20,
+              color: Colors.greenAccent,
+            ),
+            Expanded(
+              child: Container(
+                width: 20,
+                height: 20,
+                color: Colors.red,
+              ),
+            ),
+          ],
+        )
+        // // Container(
+        // //   height: double.infinity,
+        // //   width: double.infinity,
+        // //   color: Colors.yellow,
+        // //   child: Center(
+        // //     child: Container(
+        // //       width: 250,
+        // //       height: 250,
+        // //       decoration: BoxDecoration(
+        // //         color: Colors.blueGrey,
+        // //         shape: BoxShape.circle,
+        // //         // borderRadius: BorderRadius.circular(25)),
+        // //         // borderRadius: BorderRadius.only(
+        // //         //     topLeft: Radius.circular(35),
+        // //         //     topRight: Radius.circular(50),
+        // //         //     bottomLeft: Radius.elliptical(20, 15),
+        // //         //     bottomRight: Radius.elliptical(30, 45)),
+        // //         border: Border.all(width: 5, color: Colors.white),
+        // //         boxShadow: [
+        // //           BoxShadow(blurRadius: 50, spreadRadius: 50, color: Colors.red)
+        // //         ],
+        // //       ),
+        // //     ),
+        // //   ),
+        // // )
+        // // ListView.separated(
+        // //     itemBuilder: (context, index) {
+        // //       return Text(
+        // //         namesArr[index],
+        // //         style: TextStyle(
+        // //             color: Colors.black26,
+        // //             fontSize: 35,
+        // //             fontStyle: FontStyle.italic,
+        // //             fontWeight: FontWeight.w900),
+        // //       );
+        // //     },
+        // //     separatorBuilder: (context, index) {
+        // //       return Divider(
+        // //         height: 50,
+        // //         thickness: 5,
+        // //       );
+        // //     },
+        // //     itemCount: namesArr.length)
 
         // // ListView.builder(
         // //     itemBuilder: ((context, index) {
