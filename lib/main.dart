@@ -41,13 +41,13 @@ class _MyHomePageState extends State<MyHomePage> {
               // width: 200,
               // height: 150,
               // color: Colors.blue,
-              child: //Image.asset('assets/images/image_1.jpg')
-                  OutlinedButton(
-                child: Text("Outline Button"),
-                onPressed: () {
-                  print("Out line clicked");
-                },
-              )
+              child: Image.asset('assets/images/flutter_01.jpg')
+              //     OutlinedButton(
+              //   child: Text("Outline Button"),
+              //   onPressed: () {
+              //     print("Out line clicked");
+              //   },
+              // )
               //     ElevatedButton(
               //   child: const Text("Elevated button"),
               //   onPressed: () {
