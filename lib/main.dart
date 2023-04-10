@@ -37,53 +37,80 @@ class _MyHomePageState extends State<MyHomePage> {
           title: Text(widget.title),
         ),
         body: Center(
-          child: Container(
+          child: InkWell(
+            onDoubleTap: () {
+              print("Double tAp");
+            },
+            onLongPress: () {
+              print("Long Press");
+            },
+            onTap: () {
+              print("Tap once");
+            },
+            child: Container(
               width: 200,
-              // height: 150,
+              height: 150,
               color: const Color.fromRGBO(33, 150, 243, 1),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                // MainAxisAlignment.center, // makes the item in center
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        const Text("R2"),
-                        const Text("R1"),
-                        const Text("R1"),
-                        const Text("R5"),
-                      ]),
-
-                  OutlinedButton(
-                    child: const Text("Outline Button"),
-                    onPressed: () {
-                      print("Out line clicked");
-                    },
+              child: Center(
+                child: InkWell(
+                  onTap: () {
+                    print("Text is tapped");
+                  },
+                  onDoubleTap: () {
+                    print("Double tAp text");
+                  },
+                  child: Text(
+                    "Tap on me!!",
+                    style: TextStyle(
+                        color: Colors.yellow,
+                        fontSize: 25,
+                        fontWeight: FontWeight.w700),
                   ),
-                  const Text('A'),
-                  const Text('B'),
-                  const Text('C'),
-                  // Image.asset('assets/images/flutter_02.jpg'),
-                  const Text('D'),
-                  const Text('E'),
-                  // TextButton(
-                  //   child: Text("Click me !!!"),
-                  //   onPressed: () {
-                  //     print("Item Clicked");
-                  //   },
-                  //   onLongPress: () {
-                  //     print("Long press");
-                  //   },
-                  // ),
-                  const Text('C'),
-                  ElevatedButton(
-                      child: const Text("Elevated button"),
-                      onPressed: () {
-                        print("Elevated button pressed");
-                      }),
-                ],
-              )
+                ),
+              ),
+              // child: Column(
+              //   mainAxisAlignment: MainAxisAlignment.start,
+              //   // MainAxisAlignment.center, // makes the item in center
+              //   crossAxisAlignment: CrossAxisAlignment.start,
+              //   children: [
+              //     Row(
+              //         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              //         children: [
+              //           const Text("R2"),
+              //           const Text("R1"),
+              //           const Text("R1"),
+              //           const Text("R5"),
+              //         ]),
+
+              //     OutlinedButton(
+              //       child: const Text("Outline Button"),
+              //       onPressed: () {
+              //         print("Out line clicked");
+              //       },
+              //     ),
+              //     const Text('A'),
+              //     const Text('B'),
+              //     const Text('C'),
+              //     // Image.asset('assets/images/flutter_02.jpg'),
+              //     const Text('D'),
+              //     const Text('E'),
+              //     // TextButton(
+              //     //   child: Text("Click me !!!"),
+              //     //   onPressed: () {
+              //     //     print("Item Clicked");
+              //     //   },
+              //     //   onLongPress: () {
+              //     //     print("Long press");
+              //     //   },
+              //     // ),
+              //     const Text('C'),
+              //     ElevatedButton(
+              //         child: const Text("Elevated button"),
+              //         onPressed: () {
+              //           print("Elevated button pressed");
+              //         }),
+              //   ],
+              // )
               // child: Image.asset('assets/images/flutter_01.jpg')
               //     OutlinedButton(
               //   child: Text("Outline Button"),
@@ -117,7 +144,8 @@ class _MyHomePageState extends State<MyHomePage> {
               //       fontWeight: FontWeight.bold,
               //       backgroundColor: Colors.red),
               // ),
-              ),
+            ),
+          ),
         ) // This trailing comma makes auto-formatting nicer for build methods.
         );
   }
