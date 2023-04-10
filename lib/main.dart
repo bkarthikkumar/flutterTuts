@@ -38,10 +38,53 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         body: Center(
           child: Container(
-              // width: 200,
+              width: 200,
               // height: 150,
-              // color: Colors.blue,
-              child: Image.asset('assets/images/flutter_01.jpg')
+              color: const Color.fromRGBO(33, 150, 243, 1),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                // MainAxisAlignment.center, // makes the item in center
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        const Text("R2"),
+                        const Text("R1"),
+                        const Text("R1"),
+                        const Text("R5"),
+                      ]),
+
+                  OutlinedButton(
+                    child: const Text("Outline Button"),
+                    onPressed: () {
+                      print("Out line clicked");
+                    },
+                  ),
+                  const Text('A'),
+                  const Text('B'),
+                  const Text('C'),
+                  // Image.asset('assets/images/flutter_02.jpg'),
+                  const Text('D'),
+                  const Text('E'),
+                  // TextButton(
+                  //   child: Text("Click me !!!"),
+                  //   onPressed: () {
+                  //     print("Item Clicked");
+                  //   },
+                  //   onLongPress: () {
+                  //     print("Long press");
+                  //   },
+                  // ),
+                  const Text('C'),
+                  ElevatedButton(
+                      child: const Text("Elevated button"),
+                      onPressed: () {
+                        print("Elevated button pressed");
+                      }),
+                ],
+              )
+              // child: Image.asset('assets/images/flutter_01.jpg')
               //     OutlinedButton(
               //   child: Text("Outline Button"),
               //   onPressed: () {
