@@ -54,7 +54,11 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar: AppBar(
           title: Text(widget.title),
         ),
-        body: Padding(
+        body: Text(
+          "B.Karthik Kumar",
+          style: TextStyle(fontSize: 35, fontFamily: 'font_hw_01'),
+        )
+        /*Padding(
           padding: const EdgeInsets.all(8.0),
           child: CircleAvatar(
             child: Container(
@@ -80,7 +84,7 @@ class _MyHomePageState extends State<MyHomePage> {
             maxRadius: 50,
             backgroundColor: Colors.blue,
           ),
-        )
+        )*/
         // // ListView.separated(
         // //     itemBuilder: (context, index) {
         // //       return ListTile(
