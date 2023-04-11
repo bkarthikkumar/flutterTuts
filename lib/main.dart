@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app2023/ui_designs/textConfig/util.dart';
 
 void main() {
   runApp(const MyApp()); // intial point
@@ -16,6 +17,20 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.red,
+        textTheme: TextTheme(
+          displayLarge: TextStyle(
+              fontSize: 35, fontFamily: 'font_hw_01', color: Colors.green),
+          displaySmall: TextStyle(
+              fontSize: 30,
+              fontFamily: 'font_hw_01',
+              color: Colors.black,
+              fontStyle: FontStyle.italic),
+          titleSmall: TextStyle(
+              fontSize: 25,
+              fontFamily: 'font_hw_01',
+              color: Colors.yellow,
+              fontStyle: FontStyle.italic),
+        ),
       ),
       home: const MyHomePage(
           title:
@@ -54,10 +69,47 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar: AppBar(
           title: Text(widget.title),
         ),
-        body: Text(
-          "B.Karthik Kumar",
-          style: TextStyle(fontSize: 35, fontFamily: 'font_hw_01'),
+        body: Column(
+          children: [
+            Text(
+              "01",
+              style: Theme.of(context)
+                  .textTheme
+                  .displayLarge!
+                  .copyWith(color: Colors.blue),
+            ),
+            Text(
+              "02",
+              style: Theme.of(context).textTheme.titleSmall,
+            ),
+            Text(
+              "03",
+              style: Theme.of(context).textTheme.displaySmall,
+            ),
+            Text("04"),
+            Text(
+              "05",
+              style: Theme.of(context).textTheme.displaySmall,
+            ),
+            Text(
+              "06",
+              style: customText_50size(),
+            ),
+            Text(
+              "07",
+              style: customText_35size(),
+            ),
+            Text(
+              "08",
+              style: Theme.of(context).textTheme.displayLarge,
+            ),
+          ],
         )
+
+        // Text(
+        //   "B.Karthik Kumar",
+        //   style: TextStyle(fontSize: 35, fontFamily: 'font_hw_01'),
+        // )
         /*Padding(
           padding: const EdgeInsets.all(8.0),
           child: CircleAvatar(
