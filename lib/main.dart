@@ -103,6 +103,10 @@ class _MyHomePageState extends State<MyHomePage> {
               "08",
               style: Theme.of(context).textTheme.displayLarge,
             ),
+            Text(
+              "Karthik",
+              style: parameterStyle(colorText: Colors.lightGreen),
+            )
           ],
         )
 

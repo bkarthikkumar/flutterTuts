@@ -17,3 +17,12 @@ TextStyle customText_35size() {
     fontWeight: FontWeight.bold,
   );
 }
+
+TextStyle parameterStyle(
+    {colorText = Colors.blue, textStyle = FontStyle.italic}) {
+  return TextStyle(
+    fontSize: 52,
+    fontStyle: textStyle,
+    color: colorText,
+  );
+}
