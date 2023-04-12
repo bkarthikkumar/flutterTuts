@@ -48,6 +48,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  var textController01 = TextEditingController();
+  var textController02 = TextEditingController();
   @override
   Widget build(BuildContext context) {
     var namesArr = [
@@ -64,51 +66,149 @@ class _MyHomePageState extends State<MyHomePage> {
       'two5',
       'two55',
     ];
-
+    var currentTime = DateTime.now();
     return Scaffold(
         appBar: AppBar(
           title: Text(widget.title),
         ),
-        body: Column(
-          children: [
-            Text(
-              "01",
-              style: Theme.of(context)
-                  .textTheme
-                  .displayLarge!
-                  .copyWith(color: Colors.blue),
+        body: // user input fields start //
+            Center(
+          child: Container(
+            width: 300,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "Current Time is $currentTime",
+                ),
+                Text(
+                  "Current year is ${currentTime.year}",
+                ),
+                Text(
+                  "Current month is ${currentTime.month}",
+                ),
+                Text(
+                  "Current day is ${currentTime.day}",
+                ),
+                Text(
+                  "Current Weekday  is ${currentTime.weekday}",
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    setState(() {});
+                  },
+                  child: Icon(Icons.punch_clock),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: TextField(
+                    controller: textController01,
+                    decoration: InputDecoration(
+                        suffixText: "Data Exist",
+                        suffixIcon: IconButton(
+                          onPressed: () {
+                            print("icon pressed");
+                          },
+                          icon: Icon(Icons.remember_me_rounded),
+                        ),
+                        disabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(11),
+                            borderSide: BorderSide(color: Colors.grey)),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.pink),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(11),
+                          borderSide: BorderSide(color: Colors.blue),
+                        ),
+                        prefixText: "textController01",
+                        prefixIcon: Icon(Icons.supervised_user_circle_rounded)),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: TextField(
+                    keyboardType: TextInputType.number,
+                    controller: textController02,
+                    decoration: InputDecoration(
+                      prefixText: "textController02",
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(15),
+                        borderSide: BorderSide(color: Colors.green),
+                      ),
+                    ),
+                  ),
+                ),
+                ElevatedButton(
+                    onPressed: () {
+                      String f1 = textController01.text.toUpperCase();
+                      String f2 =
+                          textController02.text.toString().toLowerCase();
+                      print("F1:$f1,F2:$f2");
+                    },
+                    child: Text(
+                      "Gather Data",
+                      style: customText_35size(),
+                    ))
+              ],
             ),
-            Text(
-              "02",
-              style: Theme.of(context).textTheme.titleSmall,
-            ),
-            Text(
-              "03",
-              style: Theme.of(context).textTheme.displaySmall,
-            ),
-            Text("04"),
-            Text(
-              "05",
-              style: Theme.of(context).textTheme.displaySmall,
-            ),
-            Text(
-              "06",
-              style: customText_50size(),
-            ),
-            Text(
-              "07",
-              style: customText_35size(),
-            ),
-            Text(
-              "08",
-              style: Theme.of(context).textTheme.displayLarge,
-            ),
-            Text(
-              "Karthik",
-              style: parameterStyle(colorText: Colors.lightGreen),
-            )
-          ],
+          ),
         )
+
+        // user input fields end //
+        // // Card Widget start //
+        // Card(
+        //   elevation: 7,
+        //   shadowColor: Colors.red,
+        //   child: Padding(
+        //     padding: const EdgeInsets.all(25.0),
+        //     child: Text(
+        //       "Karthik",
+        //       style: customText_50size(),
+        //     ),
+        //   ),
+        // )
+        // // Card widget ends //
+        // // Column(
+        // //   children: [
+        // //     Text(
+        // //       "01",
+        // //       style: Theme.of(context)
+        // //           .textTheme
+        // //           .displayLarge!
+        // //           .copyWith(color: Colors.blue),
+        // //     ),
+        // //     Text(
+        // //       "02",
+        // //       style: Theme.of(context).textTheme.titleSmall,
+        // //     ),
+        // //     Text(
+        // //       "03",
+        // //       style: Theme.of(context).textTheme.displaySmall,
+        // //     ),
+        // //     Text("04"),
+        // //     Text(
+        // //       "05",
+        // //       style: Theme.of(context).textTheme.displaySmall,
+        // //     ),
+        // //     Text(
+        // //       "06",
+        // //       style: customText_50size(),
+        // //     ),
+        // //     Text(
+        // //       "07",
+        // //       style: customText_35size(),
+        // //     ),
+        // //     Text(
+        // //       "08",
+        // //       style: Theme.of(context).textTheme.displayLarge,
+        // //     ),
+        // //     Text(
+        // //       "Karthik",
+        // //       style: parameterStyle(colorText: Colors.lightGreen),
+        // //     )
+        // //   ],
+        // // )
 
         // Text(
         //   "B.Karthik Kumar",
