@@ -84,94 +84,53 @@ class _MyHomePageState extends State<MyHomePage> {
     ];
     var currentTime = DateTime.now();
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Wrap(
-        // direction: Axis.vertical,
-        spacing: 12,
-        runSpacing: 5,
-        children: [
-          Container(
-            color: Colors.red,
-            child: Text("Karthik"),
-            height: 150,
-            width: 150,
+        appBar: AppBar(
+          title: Text(widget.title),
+        ),
+        body: Container(
+          width: 500,
+          height: 500,
+          child: Stack(
+            children: [
+              Container(
+                // color: Colors.amber,
+                child: Image.asset('assets/images/flutter_04.jpg'),
+              ),
+              Positioned(
+                top: 50,
+                left: 25,
+                child: Container(
+                  child: Image.asset('assets/images/flutter_02.jpg'),
+                  // color: Colors.grey,
+                  width: 300,
+                  height: 300,
+                ),
+              ),
+              // Container(
+              //   color: Colors.red,
+              //   width: 250,
+              //   height: 250,
+              // ),
+              // Container(
+              //   color: Colors.blue,
+              //   width: 150,
+              //   height: 150,
+              // ),
+            ],
           ),
-          Container(
-            color: Colors.green,
-            child: Text("AAA"),
-            height: 50,
-            width: 50,
-          ),
-          Container(
-            color: Colors.green,
-            child: Text("AAA"),
-            height: 50,
-            width: 50,
-          ),
-          Container(
-            color: Colors.green,
-            child: Text("AAA"),
-            height: 50,
-            width: 50,
-          ),
-          Container(
-            color: Colors.green,
-            child: Text("AAA"),
-            height: 50,
-            width: 50,
-          ),
-          Container(
-            color: Colors.green,
-            child: Text("AAA"),
-            height: 50,
-            width: 50,
-          ),
-          Container(
-            color: Colors.green,
-            child: Text("AAA"),
-            height: 50,
-            width: 50,
-          ),
-          Container(
-            color: Colors.green,
-            child: Text("AAA"),
-            height: 50,
-            width: 50,
-          ),
-          Container(
-            color: Colors.green,
-            child: Text("AAA"),
-            height: 50,
-            width: 50,
-          ),
-          Container(
-            color: Colors.green,
-            child: Text("AAA"),
-            height: 50,
-            width: 50,
-          ),
-          Container(
-            color: Colors.green,
-            child: Text("AAA"),
-            height: 50,
-            width: 50,
-          ),
-          Container(
-            color: Colors.green,
-            child: Text("AAA"),
-            height: 50,
-            width: 50,
-          ),
-          Container(
-            color: Colors.green,
-            child: Text("AAA"),
-            height: 50,
-            width: 50,
-          ),
-        ],
-      ),
-    );
+        )
+
+        // Container(
+        //   color: Colors.deepOrangeAccent,
+        //   child: Column(
+        //     children: [
+        //       topHeaderWidget(),
+        //       bodyWidget_001(),
+        //       bodyWidget_002_(),
+        //       bottomFooterWidget(),
+        //     ],
+        //   ),
+        // ),
+        );
   }
 }
